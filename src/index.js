@@ -6,10 +6,10 @@ const app=express()
 dotenv.config();
 app.use(express.json() )
 
-app.use("/user",userRouter)
+app.use("/users",userRouter)
 console.log(process.env.DATABASE_URL);
 
 app.listen(8000,()=>{
-    console.log("app running on server 8000 successfully")
+    // console.log("app running on server 8000 successfully")
     connectToDataBase();
 })

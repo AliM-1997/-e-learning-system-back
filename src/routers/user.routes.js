@@ -4,8 +4,8 @@ const router= new Router();
 
 router.get('/',getUsers);
 router.post('/',createUser);
-router.put('/',editUser);
-router.delete('/',deleteUser);
+router.put('/:id',editUser);
+router.delete('/:id',deleteUser);
 
 
 export default router;
