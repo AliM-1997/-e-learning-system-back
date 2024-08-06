@@ -93,3 +93,11 @@ export const handleWithdrawal = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+export const getAllWithdrawals = async (req, res) => {
+  try {
+    const withdrawals = await Withdrawal.find();
+    res.status(200).json(withdrawals);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

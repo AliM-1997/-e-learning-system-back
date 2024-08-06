@@ -1,4 +1,3 @@
-// controllers/file.controller.js
 import multer from "multer";
 import path from "path";
 import File from "../models/file.model.js";
@@ -12,10 +11,13 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage });
+export const upload = multer({ storage });
 
 export const uploadFile = async (req, res) => {
   try {
+    if (!req.file) {
+      return res.status(400).json({ message: "No file uploaded" });
+    }
     const newFile = new File({
       filename: req.file.filename,
       filepath: req.file.path,
