@@ -16,8 +16,8 @@ export const enrollClass = async (req, res) => {
       user.enrolledClasses.push(classId);
       await user.save();
 
-      classToEnroll.students.push(userId);
-      await classToEnroll.save();
+      // classToEnroll.students.push(userId);
+      // await classToEnroll.save();
 
       res.status(200).json({ message: "Enrolled successfully" });
     } else {
